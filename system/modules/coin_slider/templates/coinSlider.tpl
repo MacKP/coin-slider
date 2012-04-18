@@ -25,38 +25,35 @@
 
 </div>
 
-
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
-
-jQuery.noConflict();
-    jQuery(document).ready(function(){
-        jQuery('#<?php echo $preferences['alias']; ?>').coinslider({
-            width : <?php echo $preferences['width']; ?>,
-            height : <?php echo $preferences['height']; ?>,
-            spw : <?php echo $preferences['spw']; ?>,
-            sph : <?php echo $preferences['sph']; ?>,
-            delay : <?php echo $preferences['delay']; ?>,
-            sDelay : <?php echo $preferences['sDelay']; ?>,
-            opacity : <?php echo $preferences['opacity']; ?>,
-            titleSpeed : <?php echo $preferences['titleSpeed']; ?>,
-            <?php if ($preferences['effect'] == 'all'): ?>
-                <?php echo "effect : ''  ,\n"; ?>
-            <?php else: echo "effect :" . "'" . $preferences['effect'] . "',\n"; ?>
-            <?php endif; ?>
-            <?php if ($preferences['navigation'] == true): ?>
-                <?php echo 'navigation : true,' . "\n"; ?>
-            <?php else: echo 'navigation : false,' . "\n"; ?>
-            <?php endif; ?>
-            <?php if ($preferences['links'] == true): ?>
-                <?php echo 'links : true,' . "\n"; ?>
-            <?php else: echo 'links : false,' . "\n"; ?>
-            <?php endif; ?>
-            <?php if ($preferences['hoverPause'] == true): ?>
-                <?php echo 'hoverPause : true' . "\n"; ?>
-            <?php else: echo 'hoverPause : false' . "\n"; ?>
-            <?php endif; ?>
+(function($) {
+    $('#<?php echo $preferences['alias']; ?>').coinslider({
+        width : <?php echo $preferences['width']; ?>,
+        height : <?php echo $preferences['height']; ?>,
+        spw : <?php echo $preferences['spw']; ?>,
+        sph : <?php echo $preferences['sph']; ?>,
+        delay : <?php echo $preferences['delay']; ?>,
+        sDelay : <?php echo $preferences['sDelay']; ?>,
+        opacity : <?php echo $preferences['opacity']; ?>,
+        titleSpeed : <?php echo $preferences['titleSpeed']; ?>,
+        <?php if ($preferences['effect'] == 'all'): ?>
+            <?php echo "effect : ''  ,\n"; ?>
+        <?php else: echo "effect :" . "'" . $preferences['effect'] . "',\n"; ?>
+        <?php endif; ?>
+        <?php if ($preferences['navigation'] == true): ?>
+            <?php echo 'navigation : true,' . "\n"; ?>
+        <?php else: echo 'navigation : false,' . "\n"; ?>
+        <?php endif; ?>
+        <?php if ($preferences['links'] == true): ?>
+            <?php echo 'links : true,' . "\n"; ?>
+        <?php else: echo 'links : false,' . "\n"; ?>
+        <?php endif; ?>
+        <?php if ($preferences['hoverPause'] == true): ?>
+            <?php echo 'hoverPause : true' . "\n"; ?>
+        <?php else: echo 'hoverPause : false' . "\n"; ?>
+        <?php endif; ?>
     });
-<?php echo '});' ."\n"; ?>
+<?php echo '})(jQuery);' ."\n"; ?>
 //--><!]]>
 </script>
