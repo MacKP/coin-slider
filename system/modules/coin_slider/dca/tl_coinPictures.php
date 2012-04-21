@@ -150,7 +150,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['size'],
             'exclude'                 => true,
             'inputType'               => 'imageSize',
-            'options'                 => array('crop', 'proportional', 'box'),
+            'options'                 => (version_compare(VERSION.'.'.BUILD, '2.11.0', '>=') ? $GLOBALS['TL_CROP'] : array('crop', 'proportional', 'box')),
             'reference'               => &$GLOBALS['TL_LANG']['MSC'],
             'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'tl_class'=>'w50')
         ),
