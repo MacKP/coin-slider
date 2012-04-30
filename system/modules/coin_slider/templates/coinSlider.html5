@@ -7,7 +7,7 @@
 
         <?php foreach ($this->preferences as $preferences): ?><?php endforeach; ?>
 
-        <div id="<?php echo $preferences['alias']; ?>">
+        <div id="<?php echo $preferences['alias'] . "-" . $preferences['id']; ?>">
 
         <?php foreach ($this->pictures as $pictures): ?>
 
@@ -28,7 +28,7 @@
 <script>
 <!--//--><![CDATA[//><!--
 (function($) {
-    $('#<?php echo $preferences['alias']; ?>').coinslider({
+    $('#<?php echo $preferences['alias'] . "-" . $preferences['id']; ?>').coinslider({
         width : <?php echo $preferences['width']; ?>,
         height : <?php echo $preferences['height']; ?>,
         spw : <?php echo $preferences['spw']; ?>,
