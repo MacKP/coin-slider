@@ -22,7 +22,7 @@
  *
  * PHP version 5
  * @copyright  Coin Slider by Ivan Lazarevic &#40;http://workshop.rs&#41;
- * @author     Lionel Maccaud &#40;http://www.synergie-consulting.com&#41;
+ * @author     Lionel Maccaud
  * @translator Tomas Petrlik (frogzone), www.frogzone.cz
  * @package    coinSlider
  * @license    MIT

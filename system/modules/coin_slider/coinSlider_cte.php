@@ -25,7 +25,7 @@ if (!defined('TL_ROOT'))
  *
  * PHP version 5
  * @copyright  Coin Slider by Ivan Lazarevic &#40;http://workshop.rs&#41;
- * @author     Lionel Maccaud, David Imboden &#40;http://www.synergie-consulting.com&#41; 
+ * @author     Lionel Maccaud, David Imboden
  * @package    coinSlider 
  * @license    MIT 
  * @filesource
