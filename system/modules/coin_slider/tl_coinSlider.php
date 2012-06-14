@@ -34,8 +34,8 @@ if (!defined('TL_ROOT'))
 /**
  * Class tl_coinSlider
  *
- * @copyright  Lionel Maccaud &#40;http://www.synergie-consulting.com&#41;
- * @author     Lionel Maccaud &#40;http://www.synergie-consulting.com&#41; 
+ * @copyright  Lionel Maccaud
+ * @author     Lionel Maccaud
  * @package    Controller
  */
 class tl_coinSlider extends Module {
