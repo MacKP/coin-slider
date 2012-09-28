@@ -57,9 +57,9 @@
  * Use function array_insert() to modify an existing modules array.
  */
 $GLOBALS['BE_MOD']['content']['coinSlider'] = array (
-
-        'tables'     => array('tl_coinSlider', 'tl_coinPictures'),
-        'icon'       => 'system/modules/coin_slider/html/img/image-sunset.png'
+        
+    'icon'       => 'system/modules/coin_slider/assets/images/image-sunset.png',
+    'tables'     => array('tl_coinSlider', 'tl_coinPictures')
 );
 
 /**
