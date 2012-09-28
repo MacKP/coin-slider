@@ -202,7 +202,8 @@ class tl_coinPictures extends Backend {
     public function listPictures($arrRow) {
 
         $key = ($arrRow['published']) ? 'published' : 'unpublished';
-        $image = $this->getImage($arrRow['singleSRC'], 150, 150, 'box');
+        $objFile = FilesModel::findByPk($arrRow['singleSRC']);
+        $image = Image::get($objFile->path, 150, 150, 'center_center');
 
         return '
             <div class="cte_type ' . $key . '" style="color:#444;"> ' . $arrRow['name'] . '</div>
