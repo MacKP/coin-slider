@@ -82,7 +82,7 @@ $GLOBALS['BE_MOD']['content']['coinSlider'] = array (
  */
 array_insert($GLOBALS['FE_MOD']['application'], 0, array (
 
-        'coinSlider' => 'tl_coinSlider'
+        'coinSlider' => 'ModuleCoinSlider'
 ));
 
 
@@ -105,7 +105,7 @@ array_insert($GLOBALS['FE_MOD']['application'], 0, array (
  * Use function array_insert() to modify an existing CTE array.
  */
 
-$GLOBALS['TL_CTE']['images']['coinSlider'] = 'coinSlider_cte';
+$GLOBALS['TL_CTE']['images']['coinSlider'] = 'ContentCoinSlider';
 
 /**
  * -------------------------------------------------------------------------

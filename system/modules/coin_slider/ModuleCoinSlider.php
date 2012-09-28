@@ -1,8 +1,5 @@
 <?php
 
-if (!defined('TL_ROOT'))
-    die('You can not access this file directly!');
-
 /**
  * Contao Open Source CMS
  * Copyright (C) 2005-2010 Leo Feyer
@@ -32,13 +29,13 @@ if (!defined('TL_ROOT'))
  */
 
 /**
- * Class tl_coinSlider
+ * Class ModuleCoinSlider
  *
  * @copyright  Lionel Maccaud
  * @author     Lionel Maccaud
  * @package    Controller
  */
-class tl_coinSlider extends Module {
+class ModuleCoinSlider extends \Module {
 
     /**
      * Template
@@ -54,7 +51,7 @@ class tl_coinSlider extends Module {
      */
     public function generate() {
         if (TL_MODE == 'BE') {
-            $objTemplate = new BackendTemplate('be_wildcard');
+            $objTemplate = new \BackendTemplate('be_wildcard');
             $objTemplate->wildcard = '### MODULE COIN SLIDER ###';
             $objTemplate->title = $this->headline;
             $objTemplate->id = $this->id;
@@ -68,7 +65,7 @@ class tl_coinSlider extends Module {
 
             $GLOBALS['TL_CSS'][] = 'system/modules/coin_slider/html/css/coin-slider-styles.css';
             
-            $coinSlider = new coinSlider();
+            $coinSlider = new CoinSlider();
             if(!$coinSlider->ifJQuery())
             $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/html/js/jquery-1.4.1.min.js';
             
@@ -82,9 +79,9 @@ class tl_coinSlider extends Module {
      * Generate module
      */
     protected function compile() {
-        $this->Template = new FrontendTemplate('coinSlider');
+        $this->Template = new \FrontendTemplate('coinSlider');
         $this->import('Database');
-        $coinSlider = new coinSlider();
+        $coinSlider = new CoinSlider();
         $coinSlider->compileListPicturesTemplate($this->Database,$this->select_coinSlider, $this->Template);
     }
 }
