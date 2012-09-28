@@ -74,24 +74,5 @@ class CoinSlider extends \Frontend {
             $template->ifPictures = $ifPictures;
         }
     }
-    
-    /**
-     * Test if the jQuery extension is present or not
-     * 
-     * @access public
-     * @return boolean
-     */
-    public function ifJQuery(){
-        
-        $this->import('Database');
-        
-        if($this->Database->fieldExists('usejquery','tl_layout')) {
-            
-            $ifJQuery = true;
-        }
-        else $ifJQuery = false;
-        
-        return $ifJQuery;
-    }
 }
 ?>
