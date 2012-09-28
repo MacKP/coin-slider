@@ -17,9 +17,6 @@
 namespace Contao;
 
 
-include_once 'classes/CoinSlider.php';
-
-
 /**
  * Class ContentCoinSlider
  *
@@ -40,14 +37,14 @@ class ContentCoinSlider extends \ContentElement {
         if (TL_MODE == 'FE') {
 
             $GLOBALS['TL_CSS'][] = 'system/modules/coin_slider/assets/css/coin-slider-styles.css';
-            
-            $coinSlider = new CoinSlider();
-            if(!$coinSlider->ifJQuery())
-            $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/jquery-1.4.1.min.js';
-            
-            $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js';
+        
+            if (version_compare(VERSION, '3', '>=')) {
+                $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js|static';
+            }
+            else {
+                $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js';
+            }
         }
-
         return parent::generate();
     }
 

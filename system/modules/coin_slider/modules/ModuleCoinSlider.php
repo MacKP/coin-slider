@@ -61,7 +61,6 @@ class ModuleCoinSlider extends \Module {
                 $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js';
             }
         }
-
         return parent::generate();
     }
 
