@@ -19,8 +19,10 @@ ClassLoader::addClasses(array
 	// Classes
 	'Contao\CoinSlider'        => 'system/modules/coin_slider/classes/CoinSlider.php',
 
+	// Elements
+	'Contao\ContentCoinSlider' => 'system/modules/coin_slider/elements/ContentCoinSlider.php',
+
 	// Modules
-	'Contao\ContentCoinSlider' => 'system/modules/coin_slider/modules/ContentCoinSlider.php',
 	'Contao\ModuleCoinSlider'  => 'system/modules/coin_slider/modules/ModuleCoinSlider.php',
 ));
 
