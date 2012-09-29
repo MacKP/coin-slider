@@ -10,11 +10,19 @@
         <div id="<?php echo $preferences['alias'] . "-" . $preferences['id']; ?>">
 
         <?php foreach ($this->pictures as $pictures): ?>
-
-            <a href="<?php echo $pictures['imageUrl'] ?>">
-                <img alt="<?php echo $pictures['alt'] ?>" src="<?php echo $pictures['singleSRC'] ?>" />
-                <span><?php echo $pictures['description'] ?></span>
-            </a>
+        
+            <?php if($pictures['imageUrl']) {
+                echo
+                '<a href="'. $pictures['imageUrl'] .'">
+                    <img alt="'.$pictures['alt'].'" src="'.$pictures['singleSRC'].'" />'.
+                    ($pictures['description'] != NULL ? ("<span>".$pictures['description']."</span>") : "").
+                '</a>';
+            }
+            else {
+                echo
+                '<img alt="'.$pictures['alt'].'" src="'.$pictures['singleSRC'].'" />'.
+                ($pictures['description'] != NULL ? ("<span>".$pictures['description']."</span>") : "");
+            } ?>
 
         <?php endforeach; ?>
 
