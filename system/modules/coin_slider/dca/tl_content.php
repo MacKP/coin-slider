@@ -12,12 +12,12 @@
 
 
 /**
- * Add palettes to tl_module
+ * Add palettes to tl_content
  */
 $GLOBALS['TL_DCA']['tl_content']['palettes']['coinSlider'] = '{type_legend},type,headline;{select_coinSlider_legend},select_coinSlider;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 /**
- * Add fields to tl_module
+ * Add fields to tl_content
  */
 $GLOBALS['TL_DCA']['tl_content']['fields']['select_coinSlider'] = array
 (
