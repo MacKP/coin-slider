@@ -29,34 +29,35 @@
  */
 
 
-
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_coinSlider']['title'] = array('Titre', 'Veuillez s\'il vous plaît insérer un titre.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['alias'] = array('Alias', 'Cet alias est une référence unique pour le Coin Slider.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['width'] = array('Largeur', 'Largeur du slider.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['height'] = array('Hauteur', 'Hauteur du slider.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['spw'] = array('Carrés par largeur', 'Nombre de carrés en largeur.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['sph'] = array('Carrés par hauteur', 'Nombre de carrés en hauteur.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['delay'] = array('Délai', 'Délai entre les images en ms.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['sDelay'] = array('Délai entre les carrés', 'Définir le délai entre les carrés en ms.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['opacity'] = array('Opacité', 'Opacité du titre et de la navigation. Valeur entre 0 et 1.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['title']      = array('Titre', 'Veuillez s\'il vous plaît insérer un titre.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['alias']      = array('Alias', 'Cet alias est une référence unique pour le Coin Slider.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['width']      = array('Largeur', 'Largeur du slider.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['height']     = array('Hauteur', 'Hauteur du slider.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['spw']        = array('Carrés par largeur', 'Nombre de carrés en largeur.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['sph']        = array('Carrés par hauteur', 'Nombre de carrés en hauteur.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['delay']      = array('Délai', 'Délai entre les images en ms.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['sDelay']     = array('Délai entre les carrés', 'Définir le délai entre les carrés en ms.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['opacity']    = array('Opacité', 'Opacité du titre et de la navigation. Valeur entre 0 et 1.');
 $GLOBALS['TL_LANG']['tl_coinSlider']['titleSpeed'] = array('Vitesse d\'apparence du titre', 'Définir la vitesse d\'apparence du titre en ms.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['effect'] = array('Effet', 'Tous les effets ou aléatoire, tourbillon, pluie, droit.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['effect']     = array('Effet', 'Tous les effets ou aléatoire, tourbillon, pluie, droit.');
 $GLOBALS['TL_LANG']['tl_coinSlider']['navigation'] = array('Navigation', 'Préc. suiv. et boutons.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['links'] = array('Liens', 'Voir les images en tant que lien.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['links']      = array('Liens', 'Voir les images en tant que lien.');
 $GLOBALS['TL_LANG']['tl_coinSlider']['hoverPause'] = array('Pause au survol', 'Le diaporama stoppe au survol de la souris.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['published']   = array('Publier le diaporama', 'Rendre le diaporama visible sur le site Internet.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['published']  = array('Publier le diaporama', 'Rendre le diaporama visible sur le site Internet.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['prevText']   = array('Précédent', 'Texte pour le bouton "précédent".');
+$GLOBALS['TL_LANG']['tl_coinSlider']['nextText']   = array('Suivant', 'Texte pour le bouton "suivant".');
 
 
 /**
- * Reference.
+ * Reference
  */
-$GLOBALS['TL_LANG']['tl_coinSlider']['all'] = 'Tous les effets';
-$GLOBALS['TL_LANG']['tl_coinSlider']['random'] = 'aléatoire';
-$GLOBALS['TL_LANG']['tl_coinSlider']['swirl'] = 'tourbillon';
-$GLOBALS['TL_LANG']['tl_coinSlider']['rain'] = 'pluie';
+$GLOBALS['TL_LANG']['tl_coinSlider']['all']      = 'Tous les effets';
+$GLOBALS['TL_LANG']['tl_coinSlider']['random']   = 'aléatoire';
+$GLOBALS['TL_LANG']['tl_coinSlider']['swirl']    = 'tourbillon';
+$GLOBALS['TL_LANG']['tl_coinSlider']['rain']     = 'pluie';
 $GLOBALS['TL_LANG']['tl_coinSlider']['straight'] = 'droit';
 
 
@@ -64,25 +65,24 @@ $GLOBALS['TL_LANG']['tl_coinSlider']['straight'] = 'droit';
  * Legends
  */
 $GLOBALS['TL_LANG']['tl_coinSlider']['preferences_legend'] = 'Préférences';
-$GLOBALS['TL_LANG']['tl_coinSlider']['publish_legend']   = 'Publier';
-$GLOBALS['TL_LANG']['tl_coinSlider']['title_legend']   = 'Titre et alias';
+$GLOBALS['TL_LANG']['tl_coinSlider']['publish_legend']     = 'Publier';
+$GLOBALS['TL_LANG']['tl_coinSlider']['title_legend']       = 'Titre et alias';
 
 
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_coinSlider']['new']    = array('Nouveau diaporama', 'Créer un nouveau diaporama');
-$GLOBALS['TL_LANG']['tl_coinSlider']['edit']   = array('Éditer les images de ce diaporama', 'Éditer les images du diaporama ID %s');
-$GLOBALS['TL_LANG']['tl_coinSlider']['editheader']   = array('Éditer ce diaporama', 'Éditer ce diaporama ID %s');
-$GLOBALS['TL_LANG']['tl_coinSlider']['copy']   = array('Dupliquer ce diaporama', 'Dupliquer ce diaporama ID %s');
-$GLOBALS['TL_LANG']['tl_coinSlider']['delete'] = array('Supprimer ce diaporama', 'Supprimer ce diaporama ID %s');
-$GLOBALS['TL_LANG']['tl_coinSlider']['toggle'] = array('Publier/Dépublier ce diaporama', 'Publier/Dépublier ce diaporama ID %s');
-$GLOBALS['TL_LANG']['tl_coinSlider']['show']   = array('Détail du diaporama', 'Afficher les détails de ce diaporama ID %s');
+$GLOBALS['TL_LANG']['tl_coinSlider']['new']        = array('Nouveau diaporama', 'Créer un nouveau diaporama');
+$GLOBALS['TL_LANG']['tl_coinSlider']['edit']       = array('Éditer les images de ce diaporama', 'Éditer les images du diaporama ID %s');
+$GLOBALS['TL_LANG']['tl_coinSlider']['editheader'] = array('Éditer ce diaporama', 'Éditer ce diaporama ID %s');
+$GLOBALS['TL_LANG']['tl_coinSlider']['copy']       = array('Dupliquer ce diaporama', 'Dupliquer ce diaporama ID %s');
+$GLOBALS['TL_LANG']['tl_coinSlider']['delete']     = array('Supprimer ce diaporama', 'Supprimer ce diaporama ID %s');
+$GLOBALS['TL_LANG']['tl_coinSlider']['toggle']     = array('Publier/Dépublier ce diaporama', 'Publier/Dépublier ce diaporama ID %s');
+$GLOBALS['TL_LANG']['tl_coinSlider']['show']       = array('Détail du diaporama', 'Afficher les détails de ce diaporama ID %s');
 
 
 /**
  * Labels
  */
-
 $GLOBALS['TL_LANG']['tl_coinSlider']['pictures'] = 'images';
 ?>

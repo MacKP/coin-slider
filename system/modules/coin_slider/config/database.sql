@@ -33,6 +33,8 @@ CREATE TABLE `tl_coinSlider` (
   `navigation` char(1) NOT NULL default '',
   `links` char(1) NOT NULL default '',
   `hoverPause` char(1) NOT NULL default '',
+  `prevText` varchar(64) NOT NULL default 'prev',
+  `nextText` varchar(64) NOT NULL default 'next',
   PRIMARY KEY  (`id`),
   KEY `pid` (`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

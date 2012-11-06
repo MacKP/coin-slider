@@ -40,17 +40,13 @@ $GLOBALS['TL_LANG']['tl_coinPictures']['published']   = array('Publier l\'image'
 $GLOBALS['TL_LANG']['tl_coinPictures']['size']        = array('Largeur et hauteur de l\'image', 'Saisir les dimensions de l\'image et le mode de redimensionnement.');
 $GLOBALS['TL_LANG']['tl_coinPictures']['description'] = array('Description de l\'image', 'Saisir un court texte qui s\'affichera au-dessous de l\'image.');
 
+
 /**
  * Reference
  */
 $GLOBALS['TL_LANG']['tl_coinPictures']['picture_legend']  = 'Image';
 $GLOBALS['TL_LANG']['tl_coinPictures']['name_legend']     = 'Nom';
 $GLOBALS['TL_LANG']['tl_coinPictures']['publish_legend']  = 'Publier';
-
-
-/**
- * Legends
- */
 
 
 /**

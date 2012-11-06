@@ -32,7 +32,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'filter' => true,
             'flag' => 11,
             'panelLayout' => 'search,limit',
-            'headerFields' => array('title', 'width', 'height', 'spw', 'sph', 'delay', 'sDelay', 'opacity', 'titleSpeed', 'effect', 'navigation', 'links', 'hoverPause', 'published'),
+            'headerFields' => array('title', 'width', 'height', 'spw', 'sph', 'delay', 'sDelay', 'opacity', 'titleSpeed', 'effect', 'navigation', 'links', 'hoverPause', 'prevText', 'nextText', 'published'),
             'child_record_callback' => array('tl_coinPictures', 'listPictures')
         ),
         'global_operations' => array

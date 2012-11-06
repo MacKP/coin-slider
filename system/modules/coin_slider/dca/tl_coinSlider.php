@@ -93,7 +93,7 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array(''),
-		'default'                     => '{title_legend},title,alias;{preferences_legend},width,height,spw,sph,delay,sDelay,opacity,titleSpeed,effect,navigation,links,hoverPause;{publish_legend},published'
+		'default'                     => '{title_legend},title,alias;{preferences_legend},width,height,spw,sph,delay,sDelay,opacity,titleSpeed,effect,navigation,links,hoverPause,prevText,nextText;{publish_legend},published'
 	),
 
 	// Subpalettes
@@ -115,7 +115,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50')
 		),
-
                 'alias' => array
                 (
                         'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['alias'],
@@ -127,7 +126,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
                                 array('tl_coinSlider', 'generateAlias')
                         )
                 ),
-
 		'width' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['width'],
@@ -136,7 +134,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'digit', 'mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50')
 		),
-
 		'height' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['height'],
@@ -145,7 +142,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'digit', 'mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50')
 		),
-
                 'spw' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['spw'],
@@ -154,7 +150,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
 		),
-
                 'sph' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['sph'],
@@ -163,7 +158,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
 		),
-
                 'delay' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['delay'],
@@ -172,7 +166,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50')
 		),
-
                 'sDelay' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['sDelay'],
@@ -181,7 +174,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
 		),
-
                 'opacity' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['opacity'],
@@ -190,7 +182,6 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'inputType'               => 'text',
 			'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
 		),
-
                 'titleSpeed' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['titleSpeed'],
@@ -210,32 +201,28 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 			'reference'               => &$GLOBALS['TL_LANG']['tl_coinSlider'],
 			'eval'                    => array('includeBlankOption'=>false, 'tl_class'=>'w50')
 		),
-
                 'navigation' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['navigation'],
 			'exclude'                 => true,
                         'default'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('isBoolean' => true, 'tl_class'=>'w50 m12')
+			'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12')
 		),
-
                 'links' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['links'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('isBoolean' => true, 'tl_class'=>'w50 m12')
+			'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12')
 		),
-
                 'hoverPause' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['hoverPause'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('isBoolean' => true, 'tl_class'=>'w50 m12')
+			'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12')
 		),
-
                 'published' => array
                 (
                         'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['published'],
@@ -244,7 +231,23 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
                         'flag'                    => 2,
                         'inputType'               => 'checkbox',
                         'eval'                    => array('doNotCopy'=>true, 'tl_class'=>'w50 m12')
-                )
+                ),
+                'prevText' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['prevText'],
+			'exclude'                 => true,
+                        'default'                 => 'prev',
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
+		),
+                'nextText' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['nextText'],
+			'exclude'                 => true,
+                        'default'                 => 'next',
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
+		)
 	)
 );
 

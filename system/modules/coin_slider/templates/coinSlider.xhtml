@@ -58,9 +58,11 @@
         <?php else: echo 'links : false,' . "\n"; ?>
         <?php endif; ?>
         <?php if ($preferences['hoverPause'] == true): ?>
-            <?php echo 'hoverPause : true' . "\n"; ?>
-        <?php else: echo 'hoverPause : false' . "\n"; ?>
+            <?php echo 'hoverPause : true,' . "\n"; ?>
+        <?php else: echo 'hoverPause : false,' . "\n"; ?>
         <?php endif; ?>
+        prevText : <?php echo "'".$preferences['prevText']."'"; ?>,
+        nextText : <?php echo "'".$preferences['nextText']."'"; ?>
     });
 <?php echo '})(jQuery);' ."\n"; ?>
 //--><!]]>
