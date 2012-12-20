@@ -1,33 +1,14 @@
 <?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
 
 /**
- * Contao Open Source CMS
- * Copyright (C) 2005-2010 Leo Feyer
+ * Coin Slider
+ * jQuery Image Slider for Contao
  *
- * Formerly known as TYPOlight Open Source CMS.
- *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 3 of the License, or (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at <http://www.gnu.org/licenses/>.
- *
- * PHP version 5
- * @copyright  Coin Slider by Ivan Lazarevic &#40;http://workshop.rs&#41;
- * @author     Lionel Maccaud, David Imboden
- * @package    coinSlider 
- * @license    MIT 
- * @filesource
+ * @author    Lionel Maccaud
+ * @copyright Lionel Maccaud
+ * @package   coinSlider
+ * @license   MIT
  */
-
 
 /**
  * Fields
@@ -50,7 +31,6 @@ $GLOBALS['TL_LANG']['tl_coinSlider']['published']  = array('Publier le diaporama
 $GLOBALS['TL_LANG']['tl_coinSlider']['prevText']   = array('Précédent', 'Texte pour le bouton "précédent".');
 $GLOBALS['TL_LANG']['tl_coinSlider']['nextText']   = array('Suivant', 'Texte pour le bouton "suivant".');
 
-
 /**
  * Reference
  */
@@ -60,14 +40,12 @@ $GLOBALS['TL_LANG']['tl_coinSlider']['swirl']    = 'tourbillon';
 $GLOBALS['TL_LANG']['tl_coinSlider']['rain']     = 'pluie';
 $GLOBALS['TL_LANG']['tl_coinSlider']['straight'] = 'droit';
 
-
 /**
  * Legends
  */
 $GLOBALS['TL_LANG']['tl_coinSlider']['preferences_legend'] = 'Préférences';
 $GLOBALS['TL_LANG']['tl_coinSlider']['publish_legend']     = 'Publier';
 $GLOBALS['TL_LANG']['tl_coinSlider']['title_legend']       = 'Titre et alias';
-
 
 /**
  * Buttons
@@ -78,8 +56,7 @@ $GLOBALS['TL_LANG']['tl_coinSlider']['editheader'] = array('Éditer ce diaporama
 $GLOBALS['TL_LANG']['tl_coinSlider']['copy']       = array('Dupliquer ce diaporama', 'Dupliquer ce diaporama ID %s');
 $GLOBALS['TL_LANG']['tl_coinSlider']['delete']     = array('Supprimer ce diaporama', 'Supprimer ce diaporama ID %s');
 $GLOBALS['TL_LANG']['tl_coinSlider']['toggle']     = array('Publier/Dépublier ce diaporama', 'Publier/Dépublier ce diaporama ID %s');
-$GLOBALS['TL_LANG']['tl_coinSlider']['show']       = array('Détail du diaporama', 'Afficher les détails de ce diaporama ID %s');
-
+$GLOBALS['TL_LANG']['tl_coinSlider']['show']       = array('Détails du diaporama', 'Afficher les détails de ce diaporama ID %s');
 
 /**
  * Labels

@@ -1,15 +1,14 @@
 <?php
 
 /**
- * Contao Open Source CMS
+ * Coin Slider
+ * jQuery Image Slider for Contao
  *
- * Copyright (C) 2005-2012 Leo Feyer
- *
- * @package coinSlider
- * @link    http://www.contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @author    Lionel Maccaud
+ * @copyright Lionel Maccaud
+ * @package   coinSlider
+ * @license   MIT
  */
-
 
 /**
  * Run in a custom namespace, so the class can be replaced

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Contao Open Source CMS
+ * Coin Slider
+ * jQuery Image Slider for Contao
  *
- * Copyright (C) 2005-2012 Leo Feyer
- *
- * @package coinSlider
- * @link    http://www.contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @author    Lionel Maccaud
+ * @copyright Lionel Maccaud
+ * @package   coinSlider
+ * @license   MIT
  */
 
 /**
@@ -21,7 +21,6 @@ $GLOBALS['BE_MOD']['content']['coinSlider'] = array (
     'tables'     => array('tl_coinSlider', 'tl_coinPictures')
 );
 
-
 /**
  * -------------------------------------------------------------------------
  * FRONT END MODULES
@@ -32,12 +31,10 @@ array_insert($GLOBALS['FE_MOD']['application'], 0, array (
     'coinSlider' => 'ModuleCoinSlider'
 ));
 
-
 /**
  * -------------------------------------------------------------------------
  * CONTENT ELEMENTS
  * -------------------------------------------------------------------------
  */
 $GLOBALS['TL_CTE']['media']['coinSlider'] = 'ContentCoinSlider';
-
 ?>
