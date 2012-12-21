@@ -7,7 +7,7 @@
  * @author    Lionel Maccaud
  * @copyright Lionel Maccaud
  * @package   coinSlider
- * @license   MIT
+ * @license   MIT (http://lionel-m.mit-license.org/)
  */
 
 /**
