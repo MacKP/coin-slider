@@ -59,9 +59,10 @@ class CoinSlider extends \Frontend {
                 $srcImage = \Image::get($this->urlEncode($objFile->path), $imgSize[0], $imgSize[1], $imgSize[2]);
                 $arrPictures[$objPictures->id] = array(
                     'description' => $objPictures->description,
-                    'alt' => $objPictures->alt,
-                    'imageUrl' => $objPictures->imageUrl,
-                    'singleSRC' => $srcImage
+                    'alt'         => $objPictures->alt,
+                    'imageUrl'    => $objPictures->imageUrl,
+                    'singleSRC'   => $srcImage,
+                    'name'        => $objPictures->name
                 );
             }
 
