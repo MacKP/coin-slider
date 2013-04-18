@@ -36,13 +36,7 @@ class ContentCoinSlider extends \ContentElement {
         if (TL_MODE == 'FE') {
 
             $GLOBALS['TL_CSS'][] = 'system/modules/coin_slider/assets/css/coin-slider-styles.css';
-        
-            if (version_compare(VERSION, '3', '>=')) {
-                $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js|static';
-            }
-            else {
-                $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js';
-            }
+            $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js|static';
         }
         return parent::generate();
     }

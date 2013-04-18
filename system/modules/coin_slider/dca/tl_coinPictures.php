@@ -32,7 +32,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'filter' => true,
             'flag' => 11,
             'panelLayout' => 'search,limit',
-            'headerFields' => array('title', 'width', 'height', 'spw', 'sph', 'delay', 'sDelay', 'opacity', 'titleSpeed', 'effect', 'navigation', 'links', 'hoverPause', 'prevText', 'nextText', 'published'),
+            'headerFields' => array('title', 'width', 'height', 'spw', 'sph', 'delay', 'sDelay', 'opacity', 'titleSpeed', 'effect', 'navigation', 'showNavigationPrevNext', 'showNavigationButtons', 'navigationPrevNextAlwaysShown', 'prevText', 'nextText', 'links', 'hoverPause', 'published'),
             'child_record_callback' => array('tl_coinPictures', 'listPictures')
         ),
         'global_operations' => array
@@ -92,11 +92,6 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
         (
         '__selector__' => array(''),
         'default' => '{name_legend},name;{picture_legend},singleSRC,description,alt,imageUrl,size;{publish_legend},published'
-    ),
-    // Subpalettes
-    'subpalettes' => array
-        (
-        '' => ''
     ),
     // Fields
     'fields' => array

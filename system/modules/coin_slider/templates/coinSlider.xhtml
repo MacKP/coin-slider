@@ -62,7 +62,19 @@
         <?php else: echo 'hoverPause : false,' . "\n"; ?>
         <?php endif; ?>
         prevText : <?php echo "'".$preferences['prevText']."'"; ?>,
-        nextText : <?php echo "'".$preferences['nextText']."'"; ?>
+        nextText : <?php echo "'".$preferences['nextText']."'"; ?>,
+        <?php if ($preferences['showNavigationPrevNext'] == true): ?>
+            <?php echo 'showNavigationPrevNext : true,' . "\n"; ?>
+        <?php else: echo 'showNavigationPrevNext : false,' . "\n"; ?>
+        <?php endif; ?>
+        <?php if ($preferences['showNavigationButtons'] == true): ?>
+            <?php echo 'showNavigationButtons : true,' . "\n"; ?>
+        <?php else: echo 'showNavigationButtons : false,' . "\n"; ?>
+        <?php endif; ?>
+        <?php if ($preferences['navigationPrevNextAlwaysShown'] == true): ?>
+            <?php echo 'navigationPrevNextAlwaysShown : true,' . "\n"; ?>
+        <?php else: echo 'navigationPrevNextAlwaysShown : false,' . "\n"; ?>
+        <?php endif; ?>
     });
 <?php echo '})(jQuery);' ."\n"; ?>
 //--><!]]>

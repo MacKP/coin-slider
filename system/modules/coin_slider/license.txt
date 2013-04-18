@@ -1,10 +1,17 @@
-Some Icons are Copyright © Yusuke Kamiyamane. All rights reserved. (http://p.yusukekamiyamane.com/)
-
 Coin Slider by Ivan Lazarevic. http://workshop.rs/projects/coin-slider/
+License: MIT
+
+-----
+
+Contao extension by Lionel Maccaud (http://www.contao.org/en/extension-list/authors/lionel.html)
+License: MIT (http://lionel-m.mit-license.org/)
+
+-----
 
 Thanks to Tomáš Petrlík - FrogZone.CZ s.r.o. for CS translations.
 Thanks to Andreas Burg for DE translations.
 Thanks to Gergő Nyiri (gremovan) for HU translations.
 
-Contao extension by Lionel Maccaud (http://www.contao.org/en/extension-list/authors/lionel.html)
-License: MIT (http://lionel-m.mit-license.org/)
+-----
+
+Some Icons are Copyright © Yusuke Kamiyamane. All rights reserved. (http://p.yusukekamiyamane.com/)

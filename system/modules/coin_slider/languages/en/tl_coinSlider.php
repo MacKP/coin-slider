@@ -13,23 +13,26 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_coinSlider']['title']      = array('Title', 'Please enter the slideshow title.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['alias']      = array('Alias', 'This alias is a unique reference to the Coin Slider which can be called instead of its numeric ID.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['width']      = array('Width', 'width of slider panel.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['height']     = array('Height', 'height of slider panel.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['spw']        = array('Squares per width', 'Number of squares per width.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['sph']        = array('Squares per height', 'Number of squares per height.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['delay']      = array('Delay', 'delay between images in ms.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['sDelay']     = array('Delay beetwen squares', 'delay beetwen squares in ms.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['opacity']    = array('Opacity', 'opacity of title and navigation. Value between 0 and 1.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['titleSpeed'] = array('Speed of title appearance', 'speed of title appearance in ms.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['effect']     = array('Effect', 'All effects or random, swirl, rain, straight.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['navigation'] = array('Navigation', 'prev next and buttons.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['links']      = array('Links', 'show images as links.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['hoverPause'] = array('Pause on hover', 'pause on hover.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['published']  = array('Publish slideshow', 'Make the slideshow visible on the website.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['prevText']   = array('Previous', 'Text for the "previous" button.');
-$GLOBALS['TL_LANG']['tl_coinSlider']['nextText']   = array('Next', 'Text for the "next" button.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['title']                         = array('Title', 'Please enter the slideshow title.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['alias']                         = array('Alias', 'This alias is a unique reference to the Coin Slider which can be called instead of its numeric ID.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['width']                         = array('Width', 'width of slider panel.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['height']                        = array('Height', 'height of slider panel.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['spw']                           = array('Squares per width', 'Number of squares per width.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['sph']                           = array('Squares per height', 'Number of squares per height.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['delay']                         = array('Delay', 'delay between images in ms.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['sDelay']                        = array('Delay beetwen squares', 'delay beetwen squares in ms.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['opacity']                       = array('Opacity', 'opacity of title and navigation. Value between 0 and 1.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['titleSpeed']                    = array('Speed of title appearance', 'speed of title appearance in ms.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['effect']                        = array('Effect', 'All effects or random, swirl, rain, straight.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['navigation']                    = array('Navigation', 'Navigation type text (previous, next) and/or squares.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['links']                         = array('Links', 'show images as links.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['hoverPause']                    = array('Pause on hover', 'pause on hover.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['published']                     = array('Publish slideshow', 'Make the slideshow visible on the website.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['prevText']                      = array('Previous', 'Text for the previous button.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['nextText']                      = array('Next', 'Text for the next button.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['showNavigationPrevNext']        = array('Show navigation type text (previous and next)', 'Show navigation type text (previous and next).');
+$GLOBALS['TL_LANG']['tl_coinSlider']['showNavigationButtons']         = array('Show navigation type squares', 'Show navigation type squares.');
+$GLOBALS['TL_LANG']['tl_coinSlider']['navigationPrevNextAlwaysShown'] = array('Previous and next are always shown', 'Previous and next are always shown.');
 
 /**
  * Reference
@@ -46,6 +49,9 @@ $GLOBALS['TL_LANG']['tl_coinSlider']['straight'] = 'straight';
 $GLOBALS['TL_LANG']['tl_coinSlider']['preferences_legend'] = 'Preferences';
 $GLOBALS['TL_LANG']['tl_coinSlider']['publish_legend']     = 'Publish';
 $GLOBALS['TL_LANG']['tl_coinSlider']['title_legend']       = 'Title and alias';
+$GLOBALS['TL_LANG']['tl_coinSlider']['nav_legend']         = 'Navigation';
+$GLOBALS['TL_LANG']['tl_coinSlider']['size_legend']        = 'Width and height';
+$GLOBALS['TL_LANG']['tl_coinSlider']['behavior_legend']    = 'Behavior';
 
 /**
  * Buttons
