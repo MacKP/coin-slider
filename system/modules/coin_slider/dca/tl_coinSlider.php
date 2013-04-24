@@ -58,6 +58,12 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
                 'href'                => 'table=tl_coinPictures',
                 'icon'                => 'edit.gif'
             ),
+            'editheader' => array
+            (
+                'label'               => &$GLOBALS['TL_LANG']['tl_coinSlider']['editheader'],
+                'href'                => 'act=edit',
+                'icon'                => 'header.gif',
+            ),
             'copy' => array
             (
                 'label'               => &$GLOBALS['TL_LANG']['tl_coinSlider']['copy'],
