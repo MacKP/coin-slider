@@ -53,7 +53,7 @@ CREATE TABLE `tl_coinPictures` (
   `published` char(1) NOT NULL default '',
   `name` varchar(255) NOT NULL default '',
   `description` text NULL,
-  `singleSRC` varchar(255) NOT NULL default '',
+  `singleSRC` binary(16) NULL,
   `alt` varchar(255) NOT NULL default '',
   `imageUrl` varchar(255) NOT NULL default '',
   `size` varchar(64) NOT NULL default '',

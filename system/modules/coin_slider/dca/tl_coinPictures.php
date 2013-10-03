@@ -177,7 +177,7 @@ class tl_coinPictures extends Backend {
     public function listPictures($arrRow) {
 
         $key = ($arrRow['published']) ? 'published' : 'unpublished';
-        $objFile = FilesModel::findByPk($arrRow['singleSRC']);
+        $objFile = FilesModel::findByUuid($arrRow['singleSRC']);
         $image = Image::get($objFile->path, 150, 150, 'center_center');
 
         return '
