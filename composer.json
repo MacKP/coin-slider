@@ -1,0 +1,35 @@
+{
+    "name":"lionel/coin-slider",
+    "description":"Integrate the slideshow Coin Slider into your website easily.",
+    "keywords":["gallery", "Coin Slider", "slideshow"],
+    "type":"contao-module",
+    "license":"MIT",
+    "authors":[
+        {
+        "name":"Lionel Maccaud",
+        "email":"work@lionelmaccaud.ch",
+        "homepage":"http://lionelmaccaud.ch",
+        "role":"Developer"
+        }
+    ],
+    "support":{
+        "email":"work@lionelmaccaud.ch",
+        "issues":"https://github.com/lionel-m/coin-slider/issues?page=1&state=open",
+        "source":"https://github.com/lionel-m/coin-slider"
+    },
+    "require":{
+        "php":">=5.3",
+        "contao/core": ">=3.2,<3.3",
+        "contao-community-alliance/composer-installer": "*"
+    },
+    "replace": {
+            "contao-legacy/coin-slider": "*"
+    },        
+    "extra": {
+        "contao": {
+            "sources": {
+                "system/modules/coin_slider": "system/modules/coin_slider"
+            }
+        }
+    }
+}
