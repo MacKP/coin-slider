@@ -29,7 +29,10 @@
         "contao": {
             "sources": {
                 "system/modules/coin_slider": "system/modules/coin_slider"
-            }
+            },
+            "runonce": [
+                "system/modules/coin_slider/config/runonce.php"
+            ]
         }
     }
 }
