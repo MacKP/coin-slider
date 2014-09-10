@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * Coin Slider
@@ -13,8 +13,6 @@
 /**
  * tl_module fields
  */
-$GLOBALS['TL_LANG']['tl_module']['select_coinSlider']['0'] = "Coin Slider";
-$GLOBALS['TL_LANG']['tl_module']['select_coinSlider']['1'] = "Select your slideshow";
-
+$GLOBALS['TL_LANG']['tl_module']['select_coinSlider']['0']   = "Coin Slider";
+$GLOBALS['TL_LANG']['tl_module']['select_coinSlider']['1']   = "Select your slideshow";
 $GLOBALS['TL_LANG']['tl_module']['select_coinSlider_legend'] = 'Select slideshow';
-?>

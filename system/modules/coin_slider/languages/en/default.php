@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * Coin Slider
@@ -15,4 +15,3 @@
  */
 $GLOBALS['TL_LANG']['MSC']['noImages']   = 'There are no images for this slideshow.';
 $GLOBALS['TL_LANG']['CTE']['coinSlider'] = array('Coin Slider', 'jQuery Image Slider with Unique Effects');
-?>

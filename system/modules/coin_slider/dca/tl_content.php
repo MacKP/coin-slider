@@ -20,10 +20,9 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['coinSlider'] = '{type_legend},type
  */
 $GLOBALS['TL_DCA']['tl_content']['fields']['select_coinSlider'] = array
 (
-	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['select_coinSlider'],
-	'exclude'                 => true,
-	'inputType'               => 'radio',
-	'foreignKey'              => 'tl_coinSlider.title',
-	'eval'                    => array('mandatory'=>true)
+    'label'                   => &$GLOBALS['TL_LANG']['tl_content']['select_coinSlider'],
+    'exclude'                 => true,
+    'inputType'               => 'radio',
+    'foreignKey'              => 'tl_coinSlider.title',
+    'eval'                    => array('mandatory'=>true)
 );
-?>

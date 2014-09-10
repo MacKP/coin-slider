@@ -26,4 +26,3 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['select_coinSlider'] = array
     'foreignKey'              => 'tl_coinSlider.title',
     'eval'                    => array('mandatory'=>true)
 );
-?>

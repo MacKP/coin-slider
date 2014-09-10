@@ -15,7 +15,6 @@
  */
 namespace Contao;
 
-
 /**
  * Class ModuleCoinSlider
  *
@@ -23,8 +22,8 @@ namespace Contao;
  * @author     Lionel Maccaud
  * @package    Controller
  */
-class ModuleCoinSlider extends \Module {
-
+class ModuleCoinSlider extends \Module
+{
     /**
      * Template
      * @var string
@@ -37,7 +36,8 @@ class ModuleCoinSlider extends \Module {
      * @access public
      * @return string
      */
-    public function generate() {
+    public function generate()
+    {
         if (TL_MODE == 'BE') {
             $objTemplate = new \BackendTemplate('be_wildcard');
             $objTemplate->wildcard = '### MODULE COIN SLIDER ###';
@@ -49,8 +49,7 @@ class ModuleCoinSlider extends \Module {
             return $objTemplate->parse();
         }
 
-       if (TL_MODE == 'FE') {
-
+        if (TL_MODE == 'FE') {
             $GLOBALS['TL_CSS'][] = 'system/modules/coin_slider/assets/css/coin-slider-styles.css';
             $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js|static';
         }
@@ -60,11 +59,11 @@ class ModuleCoinSlider extends \Module {
     /**
      * Generate module
      */
-    protected function compile() {
+    protected function compile()
+    {
         $this->Template = new \FrontendTemplate('coinSlider');
         $this->import('Database');
         $coinSlider = new CoinSlider();
         $coinSlider->compileListPicturesTemplate($this->Database,$this->select_coinSlider, $this->Template);
     }
 }
-?>

@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * Coin Slider
@@ -19,4 +19,3 @@ $GLOBALS['TL_LANG']['MOD']['coinSlider'] =  array('Coin Slider', 'jQuery Image S
  * Front end modules
  */
 $GLOBALS['TL_LANG']['FMD']['coinSlider'] = array('Coin Slider','jQuery Image Slider avec des effets uniques');
-?>

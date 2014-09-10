@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * Coin Slider
@@ -15,6 +15,4 @@
  */
 $GLOBALS['TL_LANG']['tl_content']['select_coinSlider']['0'] = "Coin Slider";
 $GLOBALS['TL_LANG']['tl_content']['select_coinSlider']['1'] = "Veuillez sélectionner un diaporama";
-
 $GLOBALS['TL_LANG']['tl_content']['select_coinSlider_legend'] = 'Sélection du diaporama';
-?>

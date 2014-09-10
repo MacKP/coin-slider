@@ -15,7 +15,6 @@
  */
 namespace Contao;
 
-
 /**
  * Class CoinSlider
  *
@@ -23,16 +22,16 @@ namespace Contao;
  * @author     Lionel Maccaud
  * @package    Controller
  */
-class CoinSlider extends \Frontend {
-
+class CoinSlider extends \Frontend
+{
     /**
      * Compiles the data for the list template
      *
      * @access public
      * @return null
      */
-    public function compileListPicturesTemplate($database, $select_coinSlider, $template) {
-
+    public function compileListPicturesTemplate($database, $select_coinSlider, $template)
+    {
         // Test if the slideshow has pictures
         $ifPictures = true;
 
@@ -75,4 +74,3 @@ class CoinSlider extends \Frontend {
         }
     }
 }
-?>

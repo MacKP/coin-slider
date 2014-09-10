@@ -15,7 +15,6 @@
  */
 namespace Contao;
 
-
 /**
  * Class ContentCoinSlider
  *
@@ -23,18 +22,17 @@ namespace Contao;
  * @author     Lionel Maccaud
  * @package    Controller
  */
-class ContentCoinSlider extends \ContentElement {
-
+class ContentCoinSlider extends \ContentElement
+{
     /**
      * Template
      * @var string
      */
     protected $strTemplate = 'coinSlider';
 
-    public function generate() {
-
+    public function generate()
+    {
         if (TL_MODE == 'FE') {
-
             $GLOBALS['TL_CSS'][] = 'system/modules/coin_slider/assets/css/coin-slider-styles.css';
             $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/coin_slider/assets/js/coin-slider.min.js|static';
         }
@@ -44,11 +42,11 @@ class ContentCoinSlider extends \ContentElement {
     /**
      * Generate module
      */
-    protected function compile() {
+    protected function compile()
+    {
         $this->Template = new \FrontendTemplate('coinSlider');
         $this->import('Database');
         $coinSlider = new CoinSlider();
         $coinSlider->compileListPicturesTemplate($this->Database,$this->select_coinSlider, $this->Template);
     }
 }
-?>

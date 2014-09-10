@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * Coin Slider
@@ -7,7 +7,7 @@
  * @author    Lionel Maccaud
  * @copyright Lionel Maccaud
  * @package   coinSlider
- * @license   MIT
+ * @license   MIT (http://lionel-m.mit-license.org/)
  */
 
 /**
@@ -33,7 +33,6 @@ $GLOBALS['TL_LANG']['tl_coinSlider']['nextText']                      = array('S
 $GLOBALS['TL_LANG']['tl_coinSlider']['showNavigationPrevNext']        = array('Afficher la navigation de type texte (précédent et suivant)', 'Afficher la navigation de type texte (précédent et suivant).');
 $GLOBALS['TL_LANG']['tl_coinSlider']['showNavigationButtons']         = array('Afficher la navigation de type carrés', 'Afficher la navigation de type carrés.');
 $GLOBALS['TL_LANG']['tl_coinSlider']['navigationPrevNextAlwaysShown'] = array('Précédent et suivant sont toujours visibles', 'Précédent et suivant sont toujours visibles.');
-
 
 /**
  * Reference
@@ -69,4 +68,3 @@ $GLOBALS['TL_LANG']['tl_coinSlider']['show']       = array('Détails du diaporam
  * Labels
  */
 $GLOBALS['TL_LANG']['tl_coinSlider']['pictures'] = 'images';
-?>

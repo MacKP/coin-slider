@@ -17,16 +17,16 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
     (
     // Config
     'config' => array
-        (
+    (
         'dataContainer'        => 'Table',
         'enableVersioning'     => true,
         'ptable'               => 'tl_coinSlider',
     ),
     // List
     'list' => array
-        (
+    (
         'sorting' => array
-            (
+        (
             'mode' => 4,
             'fields' => array('sorting'),
             'filter' => true,
@@ -36,9 +36,9 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'child_record_callback' => array('tl_coinPictures', 'listPictures')
         ),
         'global_operations' => array
-            (
+        (
             'all' => array
-                (
+            (
                 'label'           => &$GLOBALS['TL_LANG']['MSC']['all'],
                 'href'            => 'act=select',
                 'class'           => 'header_edit_all',
@@ -46,15 +46,15 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             )
         ),
         'operations' => array
-            (
+        (
             'edit' => array
-                (
+            (
                 'label'           => &$GLOBALS['TL_LANG']['tl_coinPictures']['edit'],
                 'href'            => 'act=edit',
                 'icon'            => 'edit.gif'
             ),
             'copy' => array
-                (
+            (
                 'label'           => &$GLOBALS['TL_LANG']['tl_coinPictures']['copy'],
                 'href'            => 'act=copy',
                 'icon'            => 'copy.gif'
@@ -66,21 +66,21 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
                 'icon'            => 'cut.gif'
             ),
             'delete' => array
-                (
+            (
                 'label'           => &$GLOBALS['TL_LANG']['tl_coinPictures']['delete'],
                 'href'            => 'act=delete',
                 'icon'            => 'delete.gif',
                 'attributes'      => 'onclick="if (!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\')) return false; Backend.getScrollOffset();"'
             ),
             'toggle' => array
-                (
+            (
                 'label'           => &$GLOBALS['TL_LANG']['tl_coinPictures']['toggle'],
                 'icon'            => 'visible.gif',
                 'attributes'      => 'onclick="Backend.getScrollOffset(); return AjaxRequest.toggleVisibility(this, %s);"',
                 'button_callback' => array('tl_coinPictures', 'toggleIcon')
             ),
             'show' => array
-                (
+            (
                 'label'           => &$GLOBALS['TL_LANG']['tl_coinPictures']['show'],
                 'href'            => 'act=show',
                 'icon'            => 'show.gif'
@@ -89,15 +89,15 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
     ),
     // Palettes
     'palettes' => array
-        (
+    (
         '__selector__' => array(''),
         'default' => '{name_legend},name;{picture_legend},singleSRC,description,alt,imageUrl,size;{publish_legend},published'
     ),
     // Fields
     'fields' => array
-        (
+    (
         'name' => array
-            (
+        (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['name'],
             'exclude'                 => true,
             'search'                  => true,
@@ -105,7 +105,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'eval'                    => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50')
         ),
         'description' => array
-            (
+        (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['description'],
             'exclude'                 => true,
             'search'                  => true,
@@ -114,7 +114,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'explanation'             => 'insertTags'
         ),
         'singleSRC' => array
-            (
+        (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['singleSRC'],
             'exclude'                 => true,
             'inputType'               => 'fileTree',
@@ -130,7 +130,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'tl_class'=>'w50')
         ),
         'alt' => array
-            (
+        (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['alt'],
             'exclude'                 => true,
             'inputType'               => 'text',
@@ -145,11 +145,11 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'eval'                    => array('rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'tl_class'=>'w50 wizard'),
             'wizard' => array
             (
-                    array('tl_coinPictures', 'pagePicker')
+                array('tl_coinPictures', 'pagePicker')
             )
         ),
         'published' => array
-            (
+        (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['published'],
             'exclude'                 => true,
             'filter'                  => true,
@@ -166,16 +166,16 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
  * Provide miscellaneous methods that are used by the data configuration array.
  * @package Controller
  */
-class tl_coinPictures extends Backend {
-
+class tl_coinPictures extends Backend
+{
     /**
      * Add the type of input field
      *
      * @param array
      * @return string
      */
-    public function listPictures($arrRow) {
-
+    public function listPictures($arrRow)
+    {
         $key = ($arrRow['published']) ? 'published' : 'unpublished';
         $objFile = FilesModel::findByUuid($arrRow['singleSRC']);
         $image = Image::get($objFile->path, 150, 150, 'center_center');
@@ -198,10 +198,9 @@ class tl_coinPictures extends Backend {
      * @param string
      * @return string
      */
-    public function toggleIcon($row, $href, $label, $title, $icon, $attributes) {
-
+    public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
+    {
         if (strlen(Input::get('tid'))) {
-
             $this->toggleVisibility(Input::get('tid'), (Input::get('state') == 1));
             $this->redirect($this->getReferer());
         }
@@ -209,7 +208,6 @@ class tl_coinPictures extends Backend {
         $href .= '&amp;tid=' . $row['id'] . '&amp;state=' . ($row['published'] ? '' : 1);
 
         if (!$row['published']) {
-
             $icon = 'invisible.gif';
         }
 
@@ -221,15 +219,13 @@ class tl_coinPictures extends Backend {
      * @param integer
      * @param boolean
      */
-    public function toggleVisibility($intId, $blnVisible) {
-
+    public function toggleVisibility($intId, $blnVisible)
+    {
         $this->createInitialVersion('tl_coinPictures', $intId);
 
         // Trigger the save_callback
         if (is_array($GLOBALS['TL_DCA']['tl_coinPictures']['fields']['published']['save_callback'])) {
-
             foreach ($GLOBALS['TL_DCA']['tl_coinPictures']['fields']['published']['save_callback'] as $callback) {
-
                 $this->import($callback[0]);
                 $blnVisible = $this->$callback[0]->$callback[1]($blnVisible, $this);
             }
@@ -237,19 +233,18 @@ class tl_coinPictures extends Backend {
 
         // Update the database
         $this->Database->prepare("UPDATE tl_coinPictures SET published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
-                ->execute($intId);
+            ->execute($intId);
 
         $this->createNewVersion('tl_coinPictures', $intId);
     }
-    
+
     /**
     * Return the link picker wizard
     * @param \DataContainer
     * @return string
     */
-   public function pagePicker(DataContainer $dc)
-   {
+    public function pagePicker(DataContainer $dc)
+    {
         return ' <a href="contao/page.php?do='.Input::get('do').'&amp;table='.$dc->table.'&amp;field='.$dc->field.'&amp;value='.str_replace(array('{{link_url::', '}}'), '', $dc->value).'" title="'.specialchars($GLOBALS['TL_LANG']['MSC']['pagepicker']).'" onclick="Backend.getScrollOffset();Backend.openModalSelector({\'width\':765,\'title\':\''.$GLOBALS['TL_LANG']['MOD']['page'][0].'\',\'url\':this.href,\'id\':\''.$dc->field.'\',\'tag\':\'ctrl_'.$dc->field . ((Input::get('act') == 'editAll') ? '_' . $dc->id : '').'\',\'self\':this});return false">' . $this->generateImage('pickpage.gif', $GLOBALS['TL_LANG']['MSC']['pagepicker'], 'style="vertical-align:top;cursor:pointer"') . '</a>';
-   }
+    }
 }
-?>

@@ -284,16 +284,16 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
  * Provide miscellaneous methods that are used by the data configuration array.
  * @package Controller
  */
-class tl_coinSlider extends Backend {
-
+class tl_coinSlider extends Backend
+{
     /**
      * Count the number of courses in the database
      * @param array
      * @param string
      * @return string
      */
-    public function addPicturesNumber($row, $label) {
-
+    public function addPicturesNumber($row, $label)
+    {
         $objChildren = $this->Database->prepare("SELECT COUNT(*) AS count FROM tl_coinPictures WHERE pid=?")
                 ->execute($row['id']);
 
@@ -308,14 +308,15 @@ class tl_coinSlider extends Backend {
      * @param object
      * @return string
      */
-    public function generateAlias($varValue, DataContainer $dc) {
+    public function generateAlias($varValue, DataContainer $dc)
+    {
         $autoAlias = false;
 
         // Generate alias if there is none
         if (!strlen($varValue)) {
             $autoAlias = true;
             $key = $dc->activeRecord->title;
-            if(strlen($dc->activeRecord->title) > 0) {
+            if (strlen($dc->activeRecord->title) > 0) {
                 $keyAlias = $key;
             }
             $varValue = standardize($keyAlias);
@@ -346,10 +347,9 @@ class tl_coinSlider extends Backend {
      * @param string
      * @return string
      */
-    public function toggleIcon($row, $href, $label, $title, $icon, $attributes) {
-
+    public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
+    {
         if (strlen(Input::get('tid'))) {
-
             $this->toggleVisibility(Input::get('tid'), (Input::get('state') == 1));
             $this->redirect($this->getReferer());
         }
@@ -357,7 +357,6 @@ class tl_coinSlider extends Backend {
         $href .= '&amp;tid='.$row['id'].'&amp;state='.($row['published'] ? '' : 1);
 
         if (!$row['published']) {
-
             $icon = 'invisible.gif';
         }
 
@@ -370,15 +369,13 @@ class tl_coinSlider extends Backend {
      * @param integer
      * @param boolean
      */
-    public function toggleVisibility($intId, $blnVisible) {
-
+    public function toggleVisibility($intId, $blnVisible)
+    {
         $this->createInitialVersion('tl_coinSlider', $intId);
 
         // Trigger the save_callback
         if (is_array($GLOBALS['TL_DCA']['tl_coinSlider']['fields']['published']['save_callback'])) {
-
             foreach ($GLOBALS['TL_DCA']['tl_coinSlider']['fields']['published']['save_callback'] as $callback) {
-
                 $this->import($callback[0]);
                 $blnVisible = $this->$callback[0]->$callback[1]($blnVisible, $this);
             }
@@ -389,8 +386,5 @@ class tl_coinSlider extends Backend {
                 ->execute($intId);
 
         $this->createNewVersion('tl_coinSlider', $intId);
-
     }
 }
-
-?>

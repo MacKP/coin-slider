@@ -15,14 +15,14 @@
  */
 ClassLoader::addClasses(array
 (
-	// Classes
-	'Contao\CoinSlider'        => 'system/modules/coin_slider/classes/CoinSlider.php',
+    // Classes
+    'Contao\CoinSlider'        => 'system/modules/coin_slider/classes/CoinSlider.php',
 
-	// Elements
-	'Contao\ContentCoinSlider' => 'system/modules/coin_slider/elements/ContentCoinSlider.php',
+    // Elements
+    'Contao\ContentCoinSlider' => 'system/modules/coin_slider/elements/ContentCoinSlider.php',
 
-	// Modules
-	'Contao\ModuleCoinSlider'  => 'system/modules/coin_slider/modules/ModuleCoinSlider.php',
+    // Modules
+    'Contao\ModuleCoinSlider'  => 'system/modules/coin_slider/modules/ModuleCoinSlider.php',
 ));
 
 /**
@@ -30,5 +30,5 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-	'coinSlider' => 'system/modules/coin_slider/templates',
+    'coinSlider' => 'system/modules/coin_slider/templates',
 ));

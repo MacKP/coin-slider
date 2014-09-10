@@ -37,4 +37,3 @@ array_insert($GLOBALS['FE_MOD']['application'], 0, array (
  * -------------------------------------------------------------------------
  */
 $GLOBALS['TL_CTE']['media']['coinSlider'] = 'ContentCoinSlider';
-?>

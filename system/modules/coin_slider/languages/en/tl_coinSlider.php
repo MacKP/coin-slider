@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * Coin Slider
@@ -68,4 +68,3 @@ $GLOBALS['TL_LANG']['tl_coinSlider']['show']       = array('Coin Slider details'
  * Labels
  */
 $GLOBALS['TL_LANG']['tl_coinSlider']['pictures'] = 'pictures';
-?>
