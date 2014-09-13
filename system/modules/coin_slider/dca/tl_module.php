@@ -13,7 +13,7 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['coinSlider'] = '{title_legend},name,type,headline;{select_coinSlider_legend},select_coinSlider;{config_legend},align,space,cssID';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['coinSlider'] = '{title_legend},name,type,headline;{select_coinSlider_legend},select_coinSlider;{expert_legend:hide},guests,cssID,space';
 
 /**
  * Add fields to tl_module
