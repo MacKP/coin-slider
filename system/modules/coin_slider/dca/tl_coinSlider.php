@@ -21,7 +21,14 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
         'dataContainer'               => 'Table',
         'ctable'                      => array('tl_coinPictures'),
         'switchToEdit'                => true,
-        'enableVersioning'            => true
+        'enableVersioning'            => true,
+        'sql' => array
+          (
+              'keys' => array
+              (
+                  'id' => 'primary'
+              )
+          )
     ),
 
     // List
@@ -108,6 +115,14 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
     // Fields
     'fields' => array
     (
+       'id' => array
+        (
+            'sql'                     => "int(10) unsigned NOT NULL auto_increment"
+        ),
+        'tstamp' => array
+        (
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
+        ),
         'title' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['title'],
@@ -116,7 +131,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'sorting'                 => true,
             'flag'                    => 1,
             'inputType'               => 'text',
-            'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'alias' => array
         (
@@ -127,7 +143,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'save_callback' => array
             (
                 array('tl_coinSlider', 'generateAlias')
-            )
+            ),
+            'sql'                     => "varchar(128) NOT NULL default ''"
         ),
         'width' => array
         (
@@ -135,7 +152,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => '565',
             'inputType'               => 'text',
-            'eval'                    => array('rgxp'=>'digit', 'mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('rgxp'=>'digit', 'mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
         'height' => array
         (
@@ -143,7 +161,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => '290',
             'inputType'               => 'text',
-            'eval'                    => array('rgxp'=>'digit', 'mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('rgxp'=>'digit', 'mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
         'spw' => array
         (
@@ -151,7 +170,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => '7',
             'inputType'               => 'text',
-            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
         'sph' => array
         (
@@ -159,7 +179,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => '5',
             'inputType'               => 'text',
-            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
         'delay' => array
         (
@@ -167,7 +188,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => '3000',
             'inputType'               => 'text',
-            'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
         'sDelay' => array
         (
@@ -175,7 +197,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => '30',
             'inputType'               => 'text',
-            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
         'opacity' => array
         (
@@ -183,7 +206,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => '0.7',
             'inputType'               => 'text',
-            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "float unsigned NOT NULL default '0'"
         ),
         'titleSpeed' => array
         (
@@ -191,7 +215,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => '500',
             'inputType'               => 'text',
-            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50')
+            'eval'                    => array('rgxp'=>'digit', 'maxlength'=>255, 'tl_class'=>'w50'),
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
         ),
 
         'effect' => array
@@ -202,7 +227,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'inputType'               => 'select',
             'options'                 => array('all', 'random', 'swirl', 'rain', 'straight'),
             'reference'               => &$GLOBALS['TL_LANG']['tl_coinSlider'],
-            'eval'                    => array('includeBlankOption'=>false, 'tl_class'=>'w50')
+            'eval'                    => array('includeBlankOption'=>false, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(64) NOT NULL default ''"
         ),
         'navigation' => array
         (
@@ -210,21 +236,24 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => true,
             'inputType'               => 'checkbox',
-            'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50 m12')
+            'eval'                    => array('submitOnChange'=>true, 'tl_class'=>'w50 m12'),
+            'sql'                     => "char(1) NOT NULL default ''"
         ),
         'links' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['links'],
             'exclude'                 => true,
             'inputType'               => 'checkbox',
-            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12')
+            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12'),
+            'sql'                     => "char(1) NOT NULL default ''"
         ),
         'hoverPause' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['hoverPause'],
             'exclude'                 => true,
             'inputType'               => 'checkbox',
-            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12')
+            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12'),
+            'sql'                     => "char(1) NOT NULL default ''"
         ),
         'published' => array
         (
@@ -233,7 +262,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'filter'                  => true,
             'flag'                    => 2,
             'inputType'               => 'checkbox',
-            'eval'                    => array('doNotCopy'=>true, 'tl_class'=>'w50 m12')
+            'eval'                    => array('doNotCopy'=>true, 'tl_class'=>'w50 m12'),
+            'sql'                     => "char(1) NOT NULL default ''"
         ),
         'prevText' => array
         (
@@ -241,7 +271,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => 'prev',
             'inputType'               => 'text',
-            'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
+            'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(64) NOT NULL default 'prev'"
         ),
         'nextText' => array
         (
@@ -249,7 +280,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => 'next',
             'inputType'               => 'text',
-            'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50')
+            'eval'                    => array('maxlength'=>64, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(64) NOT NULL default 'next'"
         ),
         'showNavigationPrevNext' => array
         (
@@ -257,7 +289,8 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => true,
             'inputType'               => 'checkbox',
-            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12')
+            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50 m12'),
+            'sql'                     => "char(1) NOT NULL default '1'"
         ),
         'showNavigationButtons' => array
         (
@@ -265,14 +298,16 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
             'exclude'                 => true,
             'default'                 => true,
             'inputType'               => 'checkbox',
-            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50')
+            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50'),
+            'sql'                     => "char(1) NOT NULL default '1'"
         ),
         'navigationPrevNextAlwaysShown' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinSlider']['navigationPrevNextAlwaysShown'],
             'exclude'                 => true,
             'inputType'               => 'checkbox',
-            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50')
+            'eval'                    => array('isBoolean'=>true, 'tl_class'=>'w50'),
+            'sql'                     => "char(1) NOT NULL default ''"
         ),
     )
 );

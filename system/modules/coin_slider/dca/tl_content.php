@@ -24,5 +24,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['select_coinSlider'] = array
     'exclude'                 => true,
     'inputType'               => 'radio',
     'foreignKey'              => 'tl_coinSlider.title',
-    'eval'                    => array('mandatory'=>true)
+    'eval'                    => array('mandatory'=>true),
+    'sql'                     => "int(10) unsigned NOT NULL default '0'"
 );

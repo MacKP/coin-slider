@@ -21,6 +21,14 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
         'dataContainer'        => 'Table',
         'enableVersioning'     => true,
         'ptable'               => 'tl_coinSlider',
+        'sql' => array
+        (
+            'keys' => array
+            (
+                'id' => 'primary',
+                'pid' => 'index'
+            )
+        )
     ),
     // List
     'list' => array
@@ -96,13 +104,35 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
     // Fields
     'fields' => array
     (
+        'id' => array
+        (
+            'sql'                     => "int(10) unsigned NOT NULL auto_increment"
+        ),
+        'pid' => array
+        (
+            'foreignKey'              => 'tl_coinSlider.title',
+            'sql'                     => "int(10) unsigned NOT NULL default '0'",
+            'relation'                => array('type'=>'belongsTo', 'load'=>'eager')
+        ),
+        'sorting' => array
+        (
+            'label'                   => &$GLOBALS['TL_LANG']['MSC']['sorting'],
+            'sorting'                 => true,
+            'flag'                    => 2,
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
+        ),
+        'tstamp' => array
+        (
+            'sql'                     => "int(10) unsigned NOT NULL default '0'"
+        ),
         'name' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['name'],
             'exclude'                 => true,
             'search'                  => true,
             'inputType'               => 'text',
-            'eval'                    => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50')
+            'eval'                    => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'description' => array
         (
@@ -111,14 +141,16 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'search'                  => true,
             'inputType'               => 'textarea',
             'eval'                    => array('rte'=>'tinyMCE', 'helpwizard'=>true),
-            'explanation'             => 'insertTags'
+            'explanation'             => 'insertTags',
+            'sql'                     => "text NULL"
         ),
         'singleSRC' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['singleSRC'],
             'exclude'                 => true,
             'inputType'               => 'fileTree',
-            'eval'                    => array('fieldType' => 'radio', 'files' => true, 'filesOnly' => true, 'mandatory' => true)
+            'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'mandatory'=>true),
+            'sql'                     => "binary(16) NULL"
         ),
         'size' => array
         (
@@ -127,14 +159,16 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'inputType'               => 'imageSize',
             'options'                 => (version_compare(VERSION.'.'.BUILD, '2.11.0', '>=') ? $GLOBALS['TL_CROP'] : array('crop', 'proportional', 'box')),
             'reference'               => &$GLOBALS['TL_LANG']['MSC'],
-            'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'tl_class'=>'w50')
+            'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'tl_class'=>'w50'),
+            'sql'                     => "varchar(64) NOT NULL default ''"
         ),
         'alt' => array
         (
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['alt'],
             'exclude'                 => true,
             'inputType'               => 'text',
-            'eval'                    => array('maxlength' => 255, 'tl_class' => 'w50')
+            'eval'                    => array('maxlength' => 255, 'tl_class' => 'w50'),
+            'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'imageUrl' => array
         (
@@ -146,7 +180,8 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'wizard' => array
             (
                 array('tl_coinPictures', 'pagePicker')
-            )
+            ),
+            'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'published' => array
         (
@@ -155,7 +190,8 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'filter'                  => true,
             'flag'                    => 2,
             'inputType'               => 'checkbox',
-            'eval'                    => array('doNotCopy' => true, 'tl_class' => 'w50 m12')
+            'eval'                    => array('doNotCopy' => true, 'tl_class' => 'w50 m12'),
+            'sql'                     => "char(1) NOT NULL default ''"
         )
     )
 );
