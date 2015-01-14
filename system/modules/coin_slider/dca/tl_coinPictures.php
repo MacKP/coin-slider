@@ -98,7 +98,6 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
     // Palettes
     'palettes' => array
     (
-        '__selector__' => array(''),
         'default' => '{name_legend},name;{picture_legend},singleSRC,description,alt,imageUrl,size;{publish_legend},published'
     ),
     // Fields
@@ -131,7 +130,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'exclude'                 => true,
             'search'                  => true,
             'inputType'               => 'text',
-            'eval'                    => array('mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'),
+            'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
             'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'description' => array
@@ -157,7 +156,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['size'],
             'exclude'                 => true,
             'inputType'               => 'imageSize',
-            'options'                 => (version_compare(VERSION.'.'.BUILD, '2.11.0', '>=') ? $GLOBALS['TL_CROP'] : array('crop', 'proportional', 'box')),
+            'options'                 => $GLOBALS['TL_CROP'],
             'reference'               => &$GLOBALS['TL_LANG']['MSC'],
             'eval'                    => array('rgxp'=>'digit', 'nospace'=>true, 'tl_class'=>'w50'),
             'sql'                     => "varchar(64) NOT NULL default ''"
@@ -167,7 +166,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'label'                   => &$GLOBALS['TL_LANG']['tl_coinPictures']['alt'],
             'exclude'                 => true,
             'inputType'               => 'text',
-            'eval'                    => array('maxlength' => 255, 'tl_class' => 'w50'),
+            'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
             'sql'                     => "varchar(255) NOT NULL default ''"
         ),
         'imageUrl' => array
@@ -190,7 +189,7 @@ $GLOBALS['TL_DCA']['tl_coinPictures'] = array
             'filter'                  => true,
             'flag'                    => 2,
             'inputType'               => 'checkbox',
-            'eval'                    => array('doNotCopy' => true, 'tl_class' => 'w50 m12'),
+            'eval'                    => array('doNotCopy'=>true, 'tl_class'=>'w50 m12'),
             'sql'                     => "char(1) NOT NULL default ''"
         )
     )
