@@ -32,9 +32,6 @@ class CoinSlider extends \Frontend
      */
     public function compileListPicturesTemplate($database, $select_coinSlider, $template)
     {
-        // Test if the slideshow has pictures
-        $ifPictures = true;
-
         $objSlider = $database->prepare("SELECT * FROM tl_coinSlider WHERE id=? AND published=1")
                 ->limit(1)
                 ->execute($select_coinSlider);
@@ -67,10 +64,6 @@ class CoinSlider extends \Frontend
 
             $pictures = array_values($arrPictures);
             $template->pictures = $pictures;
-            $template->ifPictures = $ifPictures;
-        } else {
-            $ifPictures = false;
-            $template->ifPictures = $ifPictures;
         }
     }
 }

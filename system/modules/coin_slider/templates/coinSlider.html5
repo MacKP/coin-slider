@@ -3,30 +3,24 @@
         <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
     <?php endif; ?>
 
-    <?php if ($this->ifPictures == true): ?>
+    <?php foreach ($this->preferences as $preferences): ?><?php endforeach; ?>
 
-        <?php foreach ($this->preferences as $preferences): ?><?php endforeach; ?>
-
-        <div id="<?php echo $preferences['alias'] . "-" . $preferences['id']; ?>">
-
-        <?php foreach ($this->pictures as $pictures): ?>
-        
-            <?php if($pictures['imageUrl']) {
-                echo
-                '<a href="'. $pictures['imageUrl'] .'">
-                    <img alt="'.$pictures['alt'].'" src="'.$pictures['singleSRC'].'" />'.
-                    ($pictures['description'] != NULL ? ("<span>".$pictures['description']."</span>") : "").
-                '</a>';
-            }
-            else {
-                echo
-                '<img alt="'.$pictures['alt'].'" src="'.$pictures['singleSRC'].'" />'.
-                ($pictures['description'] != NULL ? ("<span>".$pictures['description']."</span>") : "");
-            } ?>
-
-        <?php endforeach; ?>
-
-        </div>
+    <div id="<?php echo $preferences['alias'] . "-" . $preferences['id']; ?>">
+    <?php if ($this->pictures): foreach ($this->pictures as $pictures): ?>
+        <?php if($pictures['imageUrl']) {
+            echo
+            '<a href="'. $pictures['imageUrl'] .'">
+                <img alt="'.$pictures['alt'].'" src="'.$pictures['singleSRC'].'" />'.
+                ($pictures['description'] != NULL ? ("<span>".$pictures['description']."</span>") : "").
+            '</a>'. "\n";
+        }
+        else {
+            echo
+            '<img alt="'.$pictures['alt'].'" src="'.$pictures['singleSRC'].'" />'.
+            ($pictures['description'] != NULL ? ("<span>".$pictures['description']."</span>") : ""). "\n";
+        } ?>
+    <?php endforeach; ?>
+    </div>
 
     <?php else: echo '<p><strong>' . $GLOBALS['TL_LANG']['MSC']['noImages'] . '</strong></p><br />'; ?>
     <?php endif; ?>
@@ -44,36 +38,15 @@
         sDelay : <?php echo $preferences['sDelay']; ?>,
         opacity : <?php echo $preferences['opacity']; ?>,
         titleSpeed : <?php echo $preferences['titleSpeed']; ?>,
-        <?php if ($preferences['effect'] == 'all'): ?>
-            <?php echo "effect : ''  ,\n"; ?>
-        <?php else: echo "effect :" . "'" . $preferences['effect'] . "',\n"; ?>
-        <?php endif; ?>
-        <?php if ($preferences['navigation'] == true): ?>
-            <?php echo 'navigation : true,' . "\n"; ?>
-        <?php else: echo 'navigation : false,' . "\n"; ?>
-        <?php endif; ?>
-        <?php if ($preferences['links'] == true): ?>
-            <?php echo 'links : true,' . "\n"; ?>
-        <?php else: echo 'links : false,' . "\n"; ?>
-        <?php endif; ?>
-        <?php if ($preferences['hoverPause'] == true): ?>
-            <?php echo 'hoverPause : true,' . "\n"; ?>
-        <?php else: echo 'hoverPause : false,' . "\n"; ?>
-        <?php endif; ?>
+        <?php echo ($preferences['effect'] == all ? "effect : ''," : "effect :" . "'" . $preferences['effect'] . "',") . "\n"; ?>
+        <?php echo ($preferences['navigation'] == true ? 'navigation : true,' : 'navigation : false,') . "\n"; ?>
+        <?php echo ($preferences['links'] == true ? 'links : true,' : 'links : false,') . "\n"; ?>
+        <?php echo ($preferences['hoverPause'] == true ? 'hoverPause : true,' : 'hoverPause : false,') . "\n"; ?>
         prevText : <?php echo "'".$preferences['prevText']."'"; ?>,
         nextText : <?php echo "'".$preferences['nextText']."'"; ?>,
-        <?php if ($preferences['showNavigationPrevNext'] == true): ?>
-            <?php echo 'showNavigationPrevNext : true,' . "\n"; ?>
-        <?php else: echo 'showNavigationPrevNext : false,' . "\n"; ?>
-        <?php endif; ?>
-        <?php if ($preferences['showNavigationButtons'] == true): ?>
-            <?php echo 'showNavigationButtons : true,' . "\n"; ?>
-        <?php else: echo 'showNavigationButtons : false,' . "\n"; ?>
-        <?php endif; ?>
-        <?php if ($preferences['navigationPrevNextAlwaysShown'] == true): ?>
-            <?php echo 'navigationPrevNextAlwaysShown : true' . "\n"; ?>
-        <?php else: echo 'navigationPrevNextAlwaysShown : false' . "\n"; ?>
-        <?php endif; ?>
+        <?php echo ($preferences['showNavigationPrevNext'] == true ? 'showNavigationPrevNext : true,' : 'showNavigationPrevNext : false,') . "\n"; ?>
+        <?php echo ($preferences['showNavigationButtons'] == true ? 'showNavigationButtons : true,' : 'showNavigationButtons : false,') . "\n"; ?>
+        <?php echo ($preferences['navigationPrevNextAlwaysShown'] == true ? 'navigationPrevNextAlwaysShown : true' : 'navigationPrevNextAlwaysShown : false') . "\n"; ?>
     });
 <?php echo '})(jQuery);' ."\n"; ?>
 </script>
