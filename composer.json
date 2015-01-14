@@ -19,11 +19,11 @@
     },
     "require":{
         "php":">=5.3",
-        "contao/core": ">=3.2,<3.4",
+        "contao/core": ">=3.2,<3.5",
         "contao-community-alliance/composer-installer": "*"
     },
     "replace": {
-            "contao-legacy/coin-slider": "*"
+            "contao-legacy/coin-slider": "self.version"
     },        
     "extra": {
         "contao": {
