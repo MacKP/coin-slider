@@ -4,6 +4,6 @@ The official website of this project is: <http://workshop.rs/projects/coin-slide
 
 Contao repository : <http://contao.org/en/extension-list/view/coin-slider.html>
 
-### Contao 3.x
+### Contao 4.x beta
 
 This extension use jQuery. You should modify your page layout(s) by selecting “use jQuery”.

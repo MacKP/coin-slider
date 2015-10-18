@@ -16,8 +16,8 @@
  * -------------------------------------------------------------------------
  */
 $GLOBALS['BE_MOD']['content']['coinSlider'] = array (
-    
-    'icon'       => 'system/modules/coin_slider/assets/images/image-sunset.png',
+
+    'icon'       => 'bundles/lionelmcoinslider/images/image-sunset.png',
     'tables'     => array('tl_coinSlider', 'tl_coinPictures')
 );
 
@@ -28,7 +28,7 @@ $GLOBALS['BE_MOD']['content']['coinSlider'] = array (
  */
 array_insert($GLOBALS['FE_MOD']['application'], 0, array (
 
-    'coinSlider' => 'ModuleCoinSlider'
+    'coinSlider' => 'CoinSlider\ModuleCoinSlider'
 ));
 
 /**
@@ -36,4 +36,4 @@ array_insert($GLOBALS['FE_MOD']['application'], 0, array (
  * CONTENT ELEMENTS
  * -------------------------------------------------------------------------
  */
-$GLOBALS['TL_CTE']['media']['coinSlider'] = 'ContentCoinSlider';
+$GLOBALS['TL_CTE']['media']['coinSlider'] = 'CoinSlider\ContentCoinSlider';

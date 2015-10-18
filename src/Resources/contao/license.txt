@@ -4,6 +4,7 @@ License: MIT
 -----
 
 Contao extension by Lionel Maccaud (http://www.contao.org/en/extension-list/authors/lionel.html)
+GitHub repository (https://github.com/lionel-m/coin-slider)
 License: MIT (http://lionel-m.mit-license.org/)
 
 -----

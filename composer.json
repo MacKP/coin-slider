@@ -6,10 +6,10 @@
     "license":"MIT",
     "authors":[
         {
-        "name":"Lionel Maccaud",
-        "email":"work@lionelmaccaud.ch",
-        "homepage":"http://lionelmaccaud.ch",
-        "role":"Developer"
+            "name":"Lionel Maccaud",
+            "email":"work@lionelmaccaud.ch",
+            "homepage":"http://lionelmaccaud.ch",
+            "role":"Developer"
         }
     ],
     "support":{
@@ -18,20 +18,22 @@
         "source":"https://github.com/lionel-m/coin-slider"
     },
     "require":{
-        "php":">=5.3",
-        "contao/core": ">=3.2,<3.5",
+        "php":">=5.4.0",
+        "contao/core-bundle": "4.*",
         "contao-community-alliance/composer-installer": "*"
     },
     "replace": {
-            "contao-legacy/coin-slider": "self.version"
-    },        
-    "extra": {
-        "contao": {
-            "sources": {
-                "system/modules/coin_slider": "system/modules/coin_slider"
-            },
-            "runonce": [
-                "system/modules/coin_slider/config/runonce.php"
+        "contao-legacy/coin-slider": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "LionelM\\CoinSliderBundle\\": "src/"
+        }
+    },
+    "extra":{
+        "contao":{
+            "runonce":[
+                "src/runonce/runonce.php"
             ]
         }
     }
