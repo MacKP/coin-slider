@@ -19,8 +19,7 @@
     },
     "require":{
         "php":">=5.4.0",
-        "contao/core-bundle": "4.*",
-        "contao-community-alliance/composer-installer": "*"
+        "contao/core-bundle": "4.*"
     },
     "replace": {
         "contao-legacy/coin-slider": "self.version"
