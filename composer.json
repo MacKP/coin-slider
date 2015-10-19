@@ -38,7 +38,7 @@
         "branch-alias": {
             "dev-contao4-dev": "2.0.x-dev"
         },
-        "symfony-assets-install": "symlink",
+        "symfony-assets-install": "symlink"
     },
     "minimum-stability": "dev"
 }
