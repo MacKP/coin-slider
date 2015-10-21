@@ -28,17 +28,5 @@
         "psr-4": {
             "LionelM\\CoinSliderBundle\\": "src/"
         }
-    },
-    "extra":{
-        "contao":{
-            "runonce":[
-                "src/runonce/runonce.php"
-            ]
-        },
-        "branch-alias": {
-            "dev-contao4-dev": "2.0.x-dev"
-        },
-        "symfony-assets-install": "symlink"
-    },
-    "minimum-stability": "dev"
+    }
 }
