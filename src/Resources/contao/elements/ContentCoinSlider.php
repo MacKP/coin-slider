@@ -15,6 +15,8 @@
  */
 namespace LionelM\CoinSliderBundle;
 
+use Contao\CoreBundle\ContaoCoreBundle;
+
 /**
  * Class ContentCoinSlider
  *
@@ -32,8 +34,10 @@ class ContentCoinSlider extends \ContentElement
 
     public function generate()
     {
-        if (TL_MODE == 'FE') {
-            $GLOBALS['TL_CSS'][] = 'web/bundles/lionelmcoinslider/css/coin-slider-styles.css|static';
+        $isFrontEnd = System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_FRONTEND);
+
+        if ($isFrontEnd) {
+            $GLOBALS['TL_CSS'][] = 'web/bundles/lionelmcoinslider/css/coin-slider-styles.css||static';
             $GLOBALS['TL_JAVASCRIPT'][] = 'web/bundles/lionelmcoinslider/js/coin-slider.min.js|static';
         }
         return parent::generate();

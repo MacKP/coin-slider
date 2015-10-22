@@ -15,6 +15,8 @@
  */
 namespace LionelM\CoinSliderBundle;
 
+use Contao\CoreBundle\ContaoCoreBundle;
+
 /**
  * Class ModuleCoinSlider
  *
@@ -38,8 +40,13 @@ class ModuleCoinSlider extends \Module
      */
     public function generate()
     {
-        if (TL_MODE == 'BE') {
+        $isBackEnd  = System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_BACKEND);
+        $isFrontEnd = System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_FRONTEND);
+
+        if ($isBackEnd) {
+            /** @var \BackendTemplate|object $objTemplate */
             $objTemplate = new \BackendTemplate('be_wildcard');
+
             $objTemplate->wildcard = '### MODULE COIN SLIDER ###';
             $objTemplate->title = $this->headline;
             $objTemplate->id = $this->id;
@@ -49,8 +56,8 @@ class ModuleCoinSlider extends \Module
             return $objTemplate->parse();
         }
 
-        if (TL_MODE == 'FE') {
-            $GLOBALS['TL_CSS'][] = 'web/bundles/lionelmcoinslider/css/coin-slider-styles.css|static';
+        if ($isFrontEnd) {
+            $GLOBALS['TL_CSS'][] = 'web/bundles/lionelmcoinslider/css/coin-slider-styles.css||static';
             $GLOBALS['TL_JAVASCRIPT'][] = 'web/bundles/lionelmcoinslider/js/coin-slider.min.js|static';
         }
         return parent::generate();
