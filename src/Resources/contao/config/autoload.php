@@ -24,17 +24,17 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
     // Classes
-    'LionelM\CoinSlider\CoinSlider'        => 'vendor/LionelM/CoinSliderBundle/src/Resources/contao/classes/CoinSlider.php',
+    'LionelM\CoinSliderBundle\CoinSlider'        => 'vendor/lionel/coin-slider/src/Resources/contao/classes/CoinSlider.php',
 
     // Elements
-    'LionelM\CoinSlider\ContentCoinSlider' => 'vendor/LionelM/CoinSliderBundle/src/Resources/contao/elements/ContentCoinSlider.php',
+    'LionelM\CoinSliderBundle\ContentCoinSlider' => 'vendor/lionel/coin-slider/src/Resources/contao/elements/ContentCoinSlider.php',
 
     // Models
-    'LionelM\CoinSlider\CoinPicturesModel' => 'vendor/LionelM/CoinSliderBundle/src/Resources/contao/models/CoinPicturesModel.php',
-    'LionelM\CoinSlider\CoinSliderModel'   => 'vendor/LionelM/CoinSliderBundle/src/Resources/contao/models/CoinSliderModel.php',
+    'LionelM\CoinSliderBundle\CoinPicturesModel' => 'vendor/lionel/coin-slider/src/Resources/contao/models/CoinPicturesModel.php',
+    'LionelM\CoinSliderBundle\CoinSliderModel'   => 'vendor/lionel/coin-slider/src/Resources/contao/models/CoinSliderModel.php',
 
     // Modules
-    'LionelM\CoinSlider\ModuleCoinSlider'  => 'vendor/LionelM/CoinSliderBundle/src/Resources/contao/modules/ModuleCoinSlider.php',
+    'LionelM\CoinSliderBundle\ModuleCoinSlider'  => 'vendor/lionel/coin-slider/src/Resources/contao/modules/ModuleCoinSlider.php',
 ));
 
 /**
@@ -42,5 +42,5 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-    'coinSlider' => 'vendor/LionelM/CoinSliderBundle/src/Resources/contao/templates',
+    'coinSlider' => 'vendor/lionel/coin-slider/src/Resources/contao/templates',
 ));
