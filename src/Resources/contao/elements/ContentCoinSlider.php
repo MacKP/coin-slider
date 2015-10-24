@@ -34,7 +34,7 @@ class ContentCoinSlider extends \ContentElement
 
     public function generate()
     {
-        $isFrontEnd = System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_FRONTEND);
+        $isFrontEnd = \System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_FRONTEND);
 
         if ($isFrontEnd) {
             $GLOBALS['TL_CSS'][] = 'web/bundles/lionelmcoinslider/css/coin-slider-styles.css||static';
@@ -51,6 +51,6 @@ class ContentCoinSlider extends \ContentElement
         $this->Template = new \FrontendTemplate('coinSlider');
         $this->import('Database');
         $coinSlider = new CoinSlider();
-        $coinSlider->compileListPicturesTemplate($this->Database,$this->select_coinSlider, $this->Template);
+        $coinSlider->compileListPicturesTemplate($this->Database, $this->select_coinSlider, $this->Template);
     }
 }

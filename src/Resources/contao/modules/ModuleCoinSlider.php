@@ -40,8 +40,8 @@ class ModuleCoinSlider extends \Module
      */
     public function generate()
     {
-        $isBackEnd  = System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_BACKEND);
-        $isFrontEnd = System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_FRONTEND);
+        $isBackEnd  = \System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_BACKEND);
+        $isFrontEnd = \System::getContainer()->isScopeActive(ContaoCoreBundle::SCOPE_FRONTEND);
 
         if ($isBackEnd) {
             /** @var \BackendTemplate|object $objTemplate */
@@ -71,6 +71,6 @@ class ModuleCoinSlider extends \Module
         $this->Template = new \FrontendTemplate('coinSlider');
         $this->import('Database');
         $coinSlider = new CoinSlider();
-        $coinSlider->compileListPicturesTemplate($this->Database,$this->select_coinSlider, $this->Template);
+        $coinSlider->compileListPicturesTemplate($this->Database, $this->select_coinSlider, $this->Template);
     }
 }

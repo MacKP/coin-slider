@@ -28,7 +28,7 @@ $GLOBALS['BE_MOD']['content']['coinSlider'] = array (
  */
 array_insert($GLOBALS['FE_MOD']['application'], 0, array (
 
-    'coinSlider' => 'CoinSlider\ModuleCoinSlider'
+    'coinSlider' => 'CoinSliderBundle\ModuleCoinSlider'
 ));
 
 /**
@@ -36,4 +36,4 @@ array_insert($GLOBALS['FE_MOD']['application'], 0, array (
  * CONTENT ELEMENTS
  * -------------------------------------------------------------------------
  */
-$GLOBALS['TL_CTE']['media']['coinSlider'] = 'CoinSlider\ContentCoinSlider';
+$GLOBALS['TL_CTE']['media']['coinSlider'] = 'CoinSliderBundle\ContentCoinSlider';
