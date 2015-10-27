@@ -1,10 +1,9 @@
-Coin Slider by Ivan Lazarevic. http://workshop.rs/projects/coin-slider/
+Coin Slider by Ivan Lazarevic (http://workshop.rs/projects/coin-slider)
 License: MIT
 
 -----
 
 Contao extension by Lionel Maccaud (https://github.com/lionel-m)
-GitHub repository (https://github.com/lionel-m/coin-slider)
 License: MIT (http://lionel-m.mit-license.org/)
 
 -----
