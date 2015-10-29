@@ -443,7 +443,7 @@ class tl_coinSlider extends Backend
         }
 
         // Update the database
-        $this->Database->prepare("UPDATE tl_coinSlider SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
+        $this->Database->prepare("UPDATE tl_coinSlider SET published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
             ->execute($intId);
 
         $this->createNewVersion('tl_coinSlider', $intId);
