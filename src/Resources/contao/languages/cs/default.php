@@ -14,5 +14,4 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MSC']['noImages'] = 'Nejsou žádné obrázky v této prezentaci.';
 $GLOBALS['TL_LANG']['CTE']['coinSlider'] = array('Coin Slider', 'jQuery prezentace obrázků s jedinečnými efekty');

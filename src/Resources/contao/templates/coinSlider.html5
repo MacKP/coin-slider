@@ -1,3 +1,4 @@
+<?php if ($this->pictures): ?>
 <section class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
     <?php if ($this->headline): ?>
         <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
@@ -6,7 +7,7 @@
     <?php foreach ($this->preferences as $preferences): ?><?php endforeach; ?>
 
     <div id="<?php echo $preferences['alias'] . "-" . $preferences['id']; ?>">
-    <?php if ($this->pictures): foreach ($this->pictures as $pictures): ?>
+    <?php foreach ($this->pictures as $pictures): ?>
         <?php if($pictures['imageUrl']) {
             echo
             '<a href="'. $pictures['imageUrl'] .'">
@@ -21,10 +22,6 @@
         } ?>
     <?php endforeach; ?>
     </div>
-
-    <?php else: echo '<p><strong>' . $GLOBALS['TL_LANG']['MSC']['noImages'] . '</strong></p><br />'; ?>
-    <?php endif; ?>
-
 </section>
 
 <script>
@@ -50,3 +47,4 @@
     });
 <?php echo '})(jQuery);' ."\n"; ?>
 </script>
+<?php endif; ?>

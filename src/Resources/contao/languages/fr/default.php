@@ -13,5 +13,4 @@
 /**
  * Miscellaneous
  */
-$GLOBALS['TL_LANG']['MSC']['noImages']   = 'Il n\'y a pas d\'images pour ce diaporama.';
 $GLOBALS['TL_LANG']['CTE']['coinSlider'] = array('Coin Slider', 'jQuery Image Slider avec des effets uniques');

@@ -71,6 +71,6 @@ class ModuleCoinSlider extends \Module
         $this->Template = new \FrontendTemplate('coinSlider');
         $this->import('Database');
         $coinSlider = new CoinSlider();
-        $coinSlider->compileListPicturesTemplate($this->Database, $this->select_coinSlider, $this->Template);
+        $coinSlider->builtImageSlider($this->Database, $this->select_coinSlider, $this->Template);
     }
 }
