@@ -14,7 +14,7 @@
  * Table tl_coinSlider
  */
 $GLOBALS['TL_DCA']['tl_coinSlider'] = array
-(
+    (
     // Config
     'config' => array
     (
@@ -23,12 +23,12 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
         'switchToEdit'                => true,
         'enableVersioning'            => true,
         'sql' => array
-          (
-              'keys' => array
-              (
-                  'id' => 'primary'
-              )
-          )
+        (
+            'keys' => array
+            (
+                'id' => 'primary'
+            )
+        )
     ),
 
     // List
@@ -115,7 +115,7 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
     // Fields
     'fields' => array
     (
-       'id' => array
+        'id' => array
         (
             'sql'                     => "int(10) unsigned NOT NULL auto_increment"
         ),
@@ -322,6 +322,15 @@ $GLOBALS['TL_DCA']['tl_coinSlider'] = array
 class tl_coinSlider extends Backend
 {
     /**
+     * Import the back end user object
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->import('BackendUser', 'User');
+    }
+
+    /**
      * Count the number of courses in the database
      * @param array
      * @param string
@@ -330,7 +339,7 @@ class tl_coinSlider extends Backend
     public function addPicturesNumber($row, $label)
     {
         $objChildren = $this->Database->prepare("SELECT COUNT(*) AS count FROM tl_coinPictures WHERE pid=?")
-                ->execute($row['id']);
+            ->execute($row['id']);
 
         $label .= ' <span style="color:#b3b3b3; padding-left:3px;">' . sprintf('[%s ' . $GLOBALS['TL_LANG']['tl_coinSlider']['pictures'] . ']', $objChildren->count) . '</span>';
 
@@ -358,7 +367,7 @@ class tl_coinSlider extends Backend
         }
 
         $objAlias = $this->Database->prepare("SELECT id FROM tl_coinSlider WHERE id=? OR alias=?")
-                ->execute($dc->id, $varValue);
+            ->execute($dc->id, $varValue);
 
         // Check whether the page alias exists
         if ($objAlias->numRows > 1) {
@@ -374,12 +383,14 @@ class tl_coinSlider extends Backend
 
     /**
      * Return the "toggle visibility" button
-     * @param array
-     * @param string
-     * @param string
-     * @param string
-     * @param string
-     * @param string
+     *
+     * @param array  $row
+     * @param string $href
+     * @param string $label
+     * @param string $title
+     * @param string $icon
+     * @param string $attributes
+     *
      * @return string
      */
     public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
@@ -389,36 +400,51 @@ class tl_coinSlider extends Backend
             $this->redirect($this->getReferer());
         }
 
-        $href .= '&amp;tid='.$row['id'].'&amp;state='.($row['published'] ? '' : 1);
+        // Check permissions AFTER checking the tid, so hacking attempts are logged
+        if (!$this->User->isAdmin && !$this->User->hasAccess('tl_coinSlider::published', 'alexf'))
+        {
+            return '';
+        }
+
+        $href .= '&amp;tid=' . $row['id'] . '&amp;state=' . ($row['published'] ? '' : 1);
 
         if (!$row['published']) {
             $icon = 'invisible.gif';
         }
 
-        return '<a href="'.$this->addToUrl($href).'" title="'.specialchars($title).'"'.$attributes.'>'.$this->generateImage($icon, $label).'</a> ';
+        return '<a href="' . $this->addToUrl($href) . '" title="' . specialchars($title) . '"' . $attributes . '>' . $this->generateImage($icon, $label) . '</a> ';
     }
 
-
     /**
-     * Disable/enable a user group
-     * @param integer
-     * @param boolean
+     * Disable/enable a slider
+     *
+     * @param integer       $intId
+     * @param boolean       $blnVisible
      */
     public function toggleVisibility($intId, $blnVisible)
     {
+        // Check permissions to publish
+        if (!$this->User->isAdmin && !$this->User->hasAccess('tl_coinSlider::published', 'alexf'))
+        {
+            $this->log('Not enough permissions to show/hide record ID "'.$intId.'"', 'tl_coinSlider toggleVisibility', TL_ERROR);
+            $this->redirect('contao/main.php?act=error');
+        }
+
         $this->createInitialVersion('tl_coinSlider', $intId);
 
         // Trigger the save_callback
-        if (is_array($GLOBALS['TL_DCA']['tl_coinSlider']['fields']['published']['save_callback'])) {
-            foreach ($GLOBALS['TL_DCA']['tl_coinSlider']['fields']['published']['save_callback'] as $callback) {
+        if (is_array($GLOBALS['TL_DCA']['tl_coinSlider']['fields']['published']['save_callback']))
+        {
+            foreach ($GLOBALS['TL_DCA']['tl_coinSlider']['fields']['published']['save_callback'] as $callback)
+            {
                 $this->import($callback[0]);
                 $blnVisible = $this->$callback[0]->$callback[1]($blnVisible, $this);
             }
         }
 
         // Update the database
-        $this->Database->prepare("UPDATE tl_coinSlider SET published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
-                ->execute($intId);
+        $this->Database->prepare("UPDATE tl_coinSlider SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
+            ->execute($intId);
 
         $this->createNewVersion('tl_coinSlider', $intId);
     }
