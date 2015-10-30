@@ -8,7 +8,7 @@ The official website of the Coin-Slider project is: <http://workshop.rs/projects
 
 ### Installation
 
-Add `"lionel/coin-slider": "~2.0@beta"` in the `composer.json` file.
+Add `"lionel/coin-slider": "~2.0",` in the `composer.json` file.
 
 Add `new LionelM\CoinSliderBundle\LionelMCoinSliderBundle(),` in the `app/AppKernel.php` file.
 
