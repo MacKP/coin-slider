@@ -12,6 +12,8 @@ Add `"lionel/coin-slider": "~2.0",` in the `composer.json` file.
 
 Add `new LionelM\CoinSliderBundle\LionelMCoinSliderBundle(),` in the `app/AppKernel.php` file.
 
-Create the symlink in `web/bundles` with `php app/console assets:install web --symlink`.
+Run the command `php composer.phar update coin-slider`.
+
+If needed, create the symlink in `web/bundles` with `php app/console assets:install web --symlink`.
 
 This extension use jQuery. You should modify your page layout(s) by selecting “Include jQuery”.
